@@ -1,0 +1,98 @@
+:root {
+    --verde-floresta: #183D25;
+    --verde-folha: #477A3E;
+    --amarelo-dourado: #F5B51B;
+    --marrom-madeira: #754321;
+    --fundo-principal: #FFFDF5;
+    --fundo-secundario: #F2EBDD;
+    --branco: #FFFFFF;
+    --texto-principal: #263629;
+    --texto-secundario: #64745F;
+    --borda: #D8DCCB;
+}
+
+* { box-sizing: border-box; }
+html, body { min-height: 100%; margin: 0; }
+body { display: flex; flex-direction: column; background: var(--fundo-principal); color: var(--texto-principal); font-family: Arial, Helvetica, sans-serif; line-height: 1.65; }
+#form1 { display: flex; min-height: 100vh; flex-direction: column; }
+.topo { display: flex; min-height: 84px; align-items: center; justify-content: space-between; gap: 24px; padding: 12px max(5%, calc((100% - 1120px) / 2)); border-bottom: 5px solid var(--amarelo-dourado); background: var(--verde-floresta); }
+.marca { color: var(--amarelo-dourado); font-size: 25px; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.menu { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+.conteudo { width: min(1050px, 90%); margin: 0 auto; padding: 64px 0 72px; }
+.apresentacao { max-width: 740px; margin: 0 auto 48px; text-align: center; }
+.sobretitulo { margin: 0 0 7px; color: var(--verde-folha); font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+h1, h2, p { margin-top: 0; }
+h1 { margin-bottom: 12px; color: var(--verde-floresta); font-size: clamp(42px, 7vw, 64px); line-height: 1.1; }
+.resumo { margin: 0; color: var(--texto-secundario); font-size: 19px; }
+.cartoes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.cartao { padding: 28px; border: 1px solid var(--borda); border-radius: 14px; background: var(--branco); box-shadow: 0 5px 16px rgba(24, 61, 37, 0.06); }
+.cartao h2 { margin-bottom: 10px; color: var(--verde-floresta); font-size: 23px; }
+.cartao p { margin: 0; color: var(--texto-secundario); }
+.icone { display: inline-flex; width: 38px; height: 38px; align-items: center; justify-content: center; margin-bottom: 15px; border-radius: 50%; background: var(--fundo-secundario); color: var(--verde-folha); font-size: 21px; font-weight: 700; }
+.destaque { grid-column: 1 / -1; border-left: 5px solid var(--amarelo-dourado); }
+.retorno { margin: 32px 0 0; text-align: center; }
+.retorno a { color: var(--verde-folha); font-weight: 700; text-decoration: none; }
+.retorno a:hover { text-decoration: underline; }
+.rodape { margin-top: auto; padding: 22px 15px; border-top: 5px solid var(--amarelo-dourado); background: var(--marrom-madeira); color: var(--branco); text-align: center; }
+.rodape p { margin: 3px 0; font-size: 14px; }
+.link-easter-egg {color: var(--texto-principal);}
+
+.galeria {
+    margin-top: 58px;
+    width: 100%;
+}
+
+.titulo-galeria {
+    margin-bottom: 22px;
+}
+
+    .titulo-galeria h2 {
+        margin-bottom: 0;
+    }
+
+.cartoes-imagem {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    width: 100%;
+}
+
+.cartao-imagem {
+    display: block;
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    background: var(--branco);
+    box-shadow: 0 5px 16px rgba(24, 61, 37, 0.08);
+    overflow: hidden;
+}
+
+.imagem-sobre {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: 500px;
+    object-fit: contain;
+    margin: 0;
+    background: var(--fundo-secundario);
+}
+
+.cartao-imagem figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 18px 20px 20px;
+}
+
+    .cartao-imagem figcaption strong {
+        color: var(--verde-floresta);
+        font-size: 17px;
+    }
+
+    .cartao-imagem figcaption span {
+        color: var(--texto-secundario);
+        font-size: 14px;
+    }
+@media (max-width: 700px) { .topo { flex-direction: column; justify-content: center; padding: 15px 5%; } .menu { justify-content: center; } .conteudo { padding: 42px 0 50px; } .cartoes { grid-template-columns: 1fr; } .destaque { grid-column: auto; } }

@@ -1,0 +1,78 @@
+:root {
+    --verde-floresta: #183D25;
+    --verde-folha: #477A3E;
+    --amarelo-dourado: #F5B51B;
+    --marrom-madeira: #754321;
+    --fundo-principal: #FFFDF5;
+    --fundo-secundario: #F2EBDD;
+    --branco: #FFFFFF;
+    --texto-principal: #263629;
+    --texto-secundario: #64745F;
+    --borda: #D8DCCB;
+}
+
+* { box-sizing: border-box; }
+html, body { min-height: 100%; margin: 0; }
+body { display: flex; flex-direction: column; background: var(--fundo-principal); color: var(--texto-principal); font-family: Arial, Helvetica, sans-serif; line-height: 1.6; }
+#form1 { display: flex; min-height: 100vh; flex-direction: column; }
+
+.cabecalho { display: flex; min-height: 84px; align-items: center; justify-content: space-between; gap: 24px; padding: 12px max(5%, calc((100% - 1120px) / 2)); border-bottom: 5px solid var(--amarelo-dourado); background: var(--verde-floresta); }
+.marca { color: var(--amarelo-dourado); font-size: 25px; font-weight: 700; text-decoration: none; }
+.cabecalho nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+.cabecalho nav a { padding: 9px 13px; border-radius: 6px; color: var(--branco); font-size: 14px; font-weight: 700; text-decoration: none; }
+.cabecalho nav a:hover { background: var(--amarelo-dourado); color: var(--verde-floresta); }
+
+.conteudo { display: grid; width: min(900px, 92%); flex: 1; margin: 0 auto; padding: 54px 0; place-items: start center; }
+.perfil-card { width: min(620px, 100%); padding: 35px; border: 1px solid var(--borda); border-radius: 14px; background: var(--branco); box-shadow: 0 7px 22px rgba(24, 61, 37, 0.08); text-align: center; }
+.avatar-perfil { display: grid; width: 76px; height: 76px; margin: 0 auto 14px; place-items: center; border-radius: 50%; background: var(--fundo-secundario); font-size: 35px; }
+.sobretitulo { margin: 0 0 3px; color: var(--verde-folha); font-size: 12px; font-weight: 700; letter-spacing: 1.3px; text-transform: uppercase; }
+.perfil-card h1 { margin: 0 0 23px; color: var(--verde-floresta); font-size: clamp(27px, 4vw, 34px); line-height: 1.2; }
+.dados-perfil { display: grid; gap: 10px; margin-bottom: 24px; text-align: left; }
+.dado { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border: 1px solid var(--borda); border-radius: 7px; background: #fffefa; }
+.dado span { color: var(--texto-secundario); font-size: 12px; }
+.dado strong { overflow-wrap: anywhere; color: var(--texto-principal); font-size: 15px; }
+.acoes-perfil, .acoes-edicao, .acoes-conta { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; }
+.acoes-perfil { margin-bottom: 16px; }
+.acao-admin { display: inline-flex; }
+.form-edicao { display: grid; gap: 13px; margin: 8px 0 22px; text-align: left; }
+.campo-edicao { display: flex; flex-direction: column; gap: 5px; }
+.campo-edicao label { color: var(--texto-secundario); font-size: 12px; font-weight: 700; }
+.entrada { width: 100%; min-height: 42px; padding: 9px 11px; border: 1px solid var(--borda); border-radius: 6px; background: #fffefa; color: var(--texto-principal); font: inherit; }
+.entrada:focus { border-color: var(--verde-folha); outline: 2px solid rgba(71, 122, 62, 0.15); }
+.acoes-edicao { justify-content: flex-start; margin-top: 5px; }
+.botao-primario, .botao-secundario { display: inline-flex; min-height: 43px; align-items: center; justify-content: center; padding: 9px 17px; border-radius: 6px; font-size: 14px; font-weight: 700; text-decoration: none; }
+.botao-primario { background: var(--verde-folha); color: var(--branco); }
+.botao-primario:hover { background: var(--verde-floresta); }
+.botao-secundario { border: 1px solid var(--borda); background: var(--branco); color: var(--texto-principal); cursor: pointer; }
+.botao-secundario:hover { background: var(--fundo-secundario); }
+.acoes-conta { margin: 3px 0 14px; }
+.botao-perigo-link { min-height: 43px; padding: 9px 14px; border: 0; background: transparent; color: #9b3e32; font: inherit; font-size: 13px; font-weight: 700; text-decoration: underline; cursor: pointer; }
+.botao-perigo-link:hover { color: #70251d; }
+.link-voltar { color: var(--verde-folha); font-size: 13px; font-weight: 700; }
+.status { display: block; margin: -8px 0 18px; padding: 10px 12px; border: 1px solid; border-radius: 7px; font-size: 14px; }
+.status.erro { border-color: #e7b9b2; background: #fff2f0; color: #9b3e32; }
+.status.sucesso { border-color: #c7ddba; background: #f0f7ec; color: #31592b; }
+
+.popup-fundo { position: fixed; z-index: 10; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(15, 31, 19, 0.62); }
+.popup-confirmacao { width: min(470px, 100%); padding: 28px 25px; border-radius: 13px; background: var(--branco); box-shadow: 0 16px 45px rgba(0, 0, 0, 0.25); text-align: center; }
+.icone-alerta { display: grid; width: 48px; height: 48px; margin: 0 auto 12px; place-items: center; border-radius: 50%; background: #fff0e8; color: #a3442b; font-size: 27px; font-weight: 700; }
+.popup-confirmacao h2 { margin: 0 0 8px; color: var(--verde-floresta); font-size: 23px; }
+.texto-confirmacao { display: block; margin-bottom: 20px; color: var(--texto-secundario); font-size: 14px; }
+.acoes-confirmacao { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; }
+.botao-perigo { min-height: 43px; padding: 9px 15px; border: 0; border-radius: 6px; background: #a33e32; color: var(--branco); font-size: 13px; font-weight: 700; cursor: pointer; }
+.botao-perigo:hover { background: #7d2b22; }
+
+.rodape { margin-top: auto; padding: 21px 15px; border-top: 5px solid var(--amarelo-dourado); background: var(--marrom-madeira); color: var(--branco); text-align: center; }
+.rodape p { margin: 3px 0; font-size: 14px; }
+
+@media (max-width: 650px) {
+    .cabecalho { flex-direction: column; justify-content: center; padding: 15px 5%; }
+    .cabecalho nav { justify-content: center; }
+    .cabecalho nav a { padding: 8px 9px; font-size: 13px; }
+    .conteudo { padding: 34px 0; }
+    .perfil-card { padding: 26px 20px; }
+    .acoes-conta { flex-direction: column; }
+    .acoes-conta input { width: 100%; }
+    .acoes-confirmacao { flex-direction: column-reverse; }
+    .acoes-confirmacao input { width: 100%; }
+}

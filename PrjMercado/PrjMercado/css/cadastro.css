@@ -1,0 +1,70 @@
+:root {
+    --verde-floresta: #183D25;
+    --verde-folha: #477A3E;
+    --amarelo-dourado: #F5B51B;
+    --fundo: #FFFDF5;
+    --borda: #D8DCCB;
+    --texto: #263629;
+    --texto-suave: #64745F;
+}
+
+* { box-sizing: border-box; }
+html, body, form { min-height: 100%; margin: 0; }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--texto);
+    background: linear-gradient(135deg, #f3f0df, var(--fundo));
+}
+.cadastro-page { min-height: 100vh; display: grid; place-items: center; padding: 28px 16px; }
+.cadastro-card {
+    width: min(100%, 540px);
+    padding: 34px;
+    background: #fff;
+    border: 1px solid var(--borda);
+    border-top: 6px solid var(--amarelo-dourado);
+    border-radius: 14px;
+    box-shadow: 0 14px 40px rgba(24, 61, 37, .12);
+}
+.voltar { color: var(--verde-folha); text-decoration: none; font-size: 14px; }
+.voltar:hover { text-decoration: underline; }
+.marca { margin: 24px 0 10px; color: var(--verde-floresta); font-size: 25px; font-weight: 800; }
+.marca span { color: var(--verde-folha); }
+h1 { margin: 0 0 8px; color: var(--verde-floresta); font-size: 26px; }
+.subtitulo { margin: 0 0 22px; color: var(--texto-suave); }
+.campo { display: grid; gap: 7px; margin: 14px 0; }
+.campo label { color: var(--verde-floresta); font-size: 14px; font-weight: 700; }
+.entrada {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid var(--borda);
+    border-radius: 7px;
+    background: #fff;
+    color: var(--texto);
+    font: inherit;
+}
+.entrada:focus { outline: 3px solid rgba(245, 181, 27, .28); border-color: var(--amarelo-dourado); }
+.mensagem, .erro-validacao { display: block; color: #a32920; font-size: 13px; line-height: 1.4; }
+.mensagem { margin: 0 0 14px; }
+.mensagem:empty { display: none; }
+.botao-cadastrar {
+    width: 100%;
+    min-height: 48px;
+    margin-top: 10px;
+    border: 0;
+    border-radius: 7px;
+    background: var(--verde-floresta);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color .18s, transform .18s;
+}
+.botao-cadastrar:hover { background: var(--verde-folha); transform: translateY(-1px); }
+.botao-cadastrar:focus-visible { outline: 3px solid var(--amarelo-dourado); outline-offset: 3px; }
+.nota { margin: 16px 0 0; color: var(--texto-suave); font-size: 12px; line-height: 1.5; text-align: center; }
+
+@media (max-width: 540px) {
+    .cadastro-page { padding: 14px; }
+    .cadastro-card { padding: 25px 20px; }
+}

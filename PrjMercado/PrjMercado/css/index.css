@@ -1,0 +1,321 @@
+﻿
+/* =========================================
+   1. CORES GLOBAIS
+========================================= */
+
+:root {
+    --verde-floresta: #183D25;
+    --verde-folha: #477A3E;
+    --verde-claro: #A8C686;
+    --amarelo-dourado: #F5B51B;
+    --vermelho-tomate: #C74336;
+    --rosa-porquinho: #F19A91;
+    --marrom-madeira: #754321;
+    --marrom-claro: #A66A35;
+    --fundo-principal: #FFFDF5;
+    --fundo-secundario: #F2EBDD;
+    --branco: #FFFFFF;
+    --texto-principal: #263629;
+    --texto-secundario: #64745F;
+    --borda: #D8DCCB;
+}
+
+/* =========================================
+   2. CONFIGURAÇÕES GERAIS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--fundo-principal);
+    color: var(--texto-principal);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+input, button {
+    font-family: inherit;
+}
+
+
+
+/* =========================================
+   7. CONTEÚDO
+========================================= */
+
+.conteudo {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 30px 4%;
+}
+
+/* =========================================
+   8. BANNER PRINCIPAL
+========================================= */
+
+.carrossel {
+    position: relative;
+    width: min(100%, 920px);
+    margin-right: auto;
+    margin-left: auto;
+    overflow: hidden;
+    isolation: isolate;
+    margin-bottom: 45px;
+    border: 3px solid var(--marrom-madeira);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(24, 61, 37, 0.12);
+}
+
+.slides-carrossel {
+    position: relative;
+    width: 100%;
+    height: clamp(320px, 48vw, 560px);
+}
+
+.carrossel-slide {
+    position: absolute;
+    inset: 0;
+    display: none;
+}
+
+.carrossel-slide.ativo {
+    display: block;
+}
+
+.imagem-slide {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    background: linear-gradient(135deg, var(--verde-folha), var(--verde-floresta));
+}
+
+.carrossel-slide:nth-child(2) .imagem-slide { background: linear-gradient(135deg, #A66A35, #754321); }
+.carrossel-slide:nth-child(3) .imagem-slide { background: linear-gradient(135deg, #A8C686, #477A3E); }
+.carrossel-slide:nth-child(4) .imagem-slide { background: linear-gradient(135deg, #F5B51B, #C74336); }
+.carrossel-slide:nth-child(5) .imagem-slide { background: linear-gradient(135deg, #F19A91, #754321); }
+
+.legenda-slide {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 28px 70px;
+    color: var(--branco);
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.76));
+}
+
+.legenda-slide h2 {
+    margin-bottom: 8px;
+    font-size: 28px;
+}
+
+.legenda-slide p {
+    font-size: 16px;
+}
+
+.controle-carrossel {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    width: 44px;
+    height: 44px;
+    transform: translateY(-50%);
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.88);
+    color: var(--verde-floresta);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.controle-carrossel:hover { background: var(--amarelo-dourado); }
+.controle-carrossel.anterior { left: 16px; }
+.controle-carrossel.proximo { right: 16px; }
+
+.indicadores-carrossel {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 16px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+}
+
+.indicador {
+    width: 11px;
+    height: 11px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.65);
+    cursor: pointer;
+}
+
+.indicador.ativo { background: var(--amarelo-dourado); }
+
+.controle-carrossel:focus-visible, .indicador:focus-visible {
+    outline: 3px solid var(--amarelo-dourado);
+    outline-offset: 3px;
+}
+
+/* =========================================
+   9. CATEGORIAS
+========================================= */
+
+.destaques {
+    width: 100%;
+}
+
+    .destaques h2 {
+        color: var(--verde-floresta);
+        font-size: 24px;
+        margin-bottom: 22px;
+    }
+
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+}
+
+.categoria {
+    min-height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background-color: var(--branco);
+    border: 2px solid var(--borda);
+    border-radius: 10px;
+    color: inherit;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+    .categoria:hover {
+        border-color: var(--verde-folha);
+        transform: translateY(-4px);
+        background-color: var(--fundo-secundario);
+    }
+
+    .categoria span {
+        font-size: 35px;
+    }
+
+    .categoria p {
+        color: var(--verde-floresta);
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+/* =========================================
+   10. RODAPÉ
+========================================= */
+
+.rodape {
+    width: 100%;
+    background-color: var(--marrom-madeira);
+    color: var(--branco);
+    text-align: center;
+    padding: 25px 15px;
+    border-top: 5px solid var(--amarelo-dourado);
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+    .rodape p {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+
+
+/* =========================================
+   11. RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .cabecalho {
+        grid-template-columns: 1fr 2fr;
+        gap: 20px;
+    }
+
+    .usuario {
+        grid-column: 1 / -1;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+    }
+
+    .categorias {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .cabecalho {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    .busca {
+        width: 100%;
+    }
+
+    .usuario {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .menu {
+        gap: 5px;
+    }
+
+    .slides-carrossel { height: 320px; }
+
+    .legenda-slide {
+        padding: 20px 55px;
+    }
+
+    .legenda-slide h2 {
+        font-size: 21px;
+    }
+
+    .legenda-slide p {
+        font-size: 13px;
+    }
+
+    .categorias {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .conteudo {
+        padding: 20px 4%;
+    }
+}

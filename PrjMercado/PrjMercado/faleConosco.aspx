@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="faleConosco.aspx.cs" Inherits="PrjMercado.faleConosco" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="faleConosco.aspx.cs" Inherits="PrjMercado.faleConosco" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -130,8 +130,8 @@
                 <h2 id="redes-titulo">Acompanhe a MarcosShop</h2>
                 <p>Encontre nossos canais nas redes sociais.</p>
                 <div class="botoes-redes">
-                    <asp:ImageButton ID="btnInstagram" runat="server" ImageUrl="imagens/instagram.svg" AlternateText="Instagram" ToolTip="Abrir Instagram" CssClass="botao-rede instagram" CausesValidation="false" OnClientClick="window.location.href='https://www.instagram.com/'; return false;" />
-                    <asp:ImageButton ID="btnYoutube" runat="server" ImageUrl="imagens/youtube.svg" AlternateText="YouTube" ToolTip="Abrir YouTube" CssClass="botao-rede youtube" CausesValidation="false" OnClientClick="window.location.href='https://www.youtube.com/'; return false;" />
+                    <asp:ImageButton ID="btnInstagram" runat="server" ImageUrl="imagens/instagram.svg" AlternateText="Instagram" ToolTip="Abrir Instagram" CssClass="botao-rede instagram" CausesValidation="false" OnClientClick="window.location.href='https://www.instagram.com/lricardo_sp'; return false;" />
+                    <asp:ImageButton ID="btnYoutube" runat="server" ImageUrl="imagens/youtube.svg" AlternateText="YouTube" ToolTip="Abrir YouTube" CssClass="botao-rede youtube" CausesValidation="false" OnClientClick="window.location.href='https://www.youtube.com/@lricardocm1'; return false;" />
                     <asp:ImageButton ID="btnDiscord" runat="server" ImageUrl="imagens/discord.svg" AlternateText="Discord" ToolTip="Abrir Discord" CssClass="botao-rede discord" CausesValidation="false" OnClientClick="window.location.href='https://discord.com/'; return false;" />
                 </div>
             </section>
